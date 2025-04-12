@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\api\v1;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\v1\SoundResource;
+use App\Models\Sound;
 
 class SoundController extends Controller
 {
@@ -12,7 +14,8 @@ class SoundController extends Controller
      */
     public function index()
     {
-        //
+        $sounds = Sound::all();
+        return SoundResource::collection($sounds);
     }
 
     /**
