@@ -19,8 +19,8 @@ class SoundResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'soundFile' => URL::to(Storage::url('sounds/' . $this->sound_file)),
-            'imageFile' => URL::to(Storage::url('images/' . $this->image_file)),
+            'soundFile' => asset('sounds/' . $this->sound_file),
+            'imageFile' => asset('images/' . $this->image_file),
             'originalUrl' => $this->original_url
         ];
     }
