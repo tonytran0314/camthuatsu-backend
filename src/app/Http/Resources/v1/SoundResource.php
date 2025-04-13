@@ -17,6 +17,7 @@ class SoundResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'id' => $this->id,
             'title' => $this->title,
             'soundFile' => URL::to(Storage::url('sounds/' . $this->sound_file)),
             'imageFile' => URL::to(Storage::url('images/' . $this->image_file)),
